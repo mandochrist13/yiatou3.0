@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ShareProduct from "../Modals/ShareProduct";
 import Desciption from "../Desciption";
 import React from 'react';
@@ -10,21 +10,21 @@ import React from 'react';
  */
 const DetailsProduct = ({product}) => {
     const [activeModal, setActiveModal] = useState(false);
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const totalImages = product.image.length;
+    // const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    // const totalImages = product.image.length;
 
     const toggleModal = () => {
         setActiveModal(!activeModal);
     }
 
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % totalImages);
-    }
+    // const nextImage = () => {
+    //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % totalImages);
+    // }
 
-    useEffect(() => {
-        const intervalId = setInterval(nextImage, 5000);
-        return () => clearInterval(intervalId);
-    }, []);
+    // useEffect(() => {
+    //     const intervalId = setInterval(nextImage, 5000);
+    //     return () => clearInterval(intervalId);
+    // }, []);
 
     const getPriceByQuantity = (min, max) => {
         if (min >= 101) return 7000;

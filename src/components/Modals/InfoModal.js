@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+// import { X } from 'lucide-react';
 
 const InfoModal = ({ isOpen, onClose, message }) => {
   if (!isOpen) return null;

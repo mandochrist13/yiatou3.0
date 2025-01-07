@@ -1,6 +1,6 @@
 import React from 'react';
 import ModalModel from './ModalModel';
-import ButtonCta from '../Buttons/ButtonCta';
+// import ButtonCta from '../Buttons/ButtonCta';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppModal = ({ isOpen, onClose, onConfirm }) => {

@@ -58,13 +58,13 @@ const Header = ({ onGetMoney, onWithdraw }) => {
       console.log("onGetMoney est une fonction");
     }
   };
-  const handleWithdrawClick = () => {
-    try {
-      onWithdraw();
-    } catch (error) {
-      console.log("onWithdraw est une fonction");
-    }
-  };
+  // const handleWithdrawClick = () => {
+  //   try {
+  //     onWithdraw();
+  //   } catch (error) {
+  //     console.log("onWithdraw est une fonction");
+  //   }
+  // };
   return (
     <header className="sticky top-0 z-10 w-full h-[150px] bg-green-200 rounded-b-[30px] px-3 flex flex-col justify-center items-start">
       <p className="font-medium -translate-y-2">Solde actuel</p>

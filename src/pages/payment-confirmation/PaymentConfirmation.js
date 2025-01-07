@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { formatPrice } from '../../utils/utils';
+// import { formatPrice } from '../../utils/utils';
 import ButtonCta from '../../components/Buttons/ButtonCta';
 import { CheckCircle, XCircle } from 'lucide-react';
-import MoreProduct from '../../components/Sections/MoreProduct';
+// import MoreProduct from '../../components/Sections/MoreProduct';
 import RelatedProducts from '../../components/Sections/RelatedProducts';
 
 const PaymentConfirmation = () => {

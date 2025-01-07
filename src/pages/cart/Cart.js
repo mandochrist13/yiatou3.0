@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Trash2, Plus, Minus } from 'lucide-react'
+import { Trash2 } from 'lucide-react'
 import TopBarWithButtonBack from '../../components/topBar/TopBarWithButtonBack'
 import PageLayout from '../layout/PageLayout'
 import ButtonCta from "../../components/Buttons/ButtonCta";

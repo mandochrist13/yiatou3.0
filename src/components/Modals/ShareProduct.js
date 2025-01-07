@@ -3,11 +3,12 @@ import {FaFacebookMessenger, FaInstagram} from "react-icons/fa";
 import React, { useState } from 'react'
 import ModalModel from "./ModalModel";
 import ButtonCta from "../Buttons/ButtonCta";
-import Login from "../../pages/auth/Login";
+// import Login from "../../pages/auth/Login";
 import FAQ from '../FAQ/FAQ';
 
 export default function ShareProduct({toggleActiveShare, activeShare, product = null, isProduct = true}) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const [isLoggedIn] = useState(false);
+  //  , setIsLoggedIn
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   const toggleModal = () => {
@@ -18,10 +19,10 @@ export default function ShareProduct({toggleActiveShare, activeShare, product = 
     }
   }
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-    setShowLoginModal(false);
-  }
+  // const handleLogin = () => {
+  //   setIsLoggedIn(true);
+  //   setShowLoginModal(false);
+  // }
 
   const toggleLoginModal = () => {
     setShowLoginModal(!showLoginModal);
@@ -35,7 +36,7 @@ export default function ShareProduct({toggleActiveShare, activeShare, product = 
       active={activeShare}
     >
       <ModalImageContent isProduct={isProduct} isLoggedIn={isLoggedIn} toggleLoginModal={toggleLoginModal} />
-      {showLoginModal && <LoginModal onClose={toggleLoginModal} onLogin={handleLogin} />}
+      {/* {showLoginModal && <LoginModal onClose={toggleLoginModal} onLogin={handleLogin} />} */}
     </ModalModel>
   )
 }
@@ -130,24 +131,24 @@ function ModalImageContent({isProduct = true, isLoggedIn, toggleLoginModal}) {
 }
 
 
-function LoginModal({ onClose, onLogin }) {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Implement login logic here
-        onLogin();
-    };
+// function LoginModal({ onClose, onLogin }) {
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         // Implement login logic here
+//         onLogin();
+//     };
 
-    return (
-        <ModalModel onClose={onClose} icon={<IconUser />} title="Connexion" active={true}>
-            <Login/>
-        </ModalModel>
-    );
-}
+//     return (
+//         <ModalModel onClose={onClose} icon={<IconUser />} title="Connexion" active={true}>
+//             <Login/>
+//         </ModalModel>
+//     );
+// }
 
-function IconUser() {
-    return (
-        <span className="px-2 py-2 text-white rounded-full bg-blue-600">
-            <i className="fi fi-sr-user flex"></i>
-        </span>
-    )
-}
+// function IconUser() {
+//     return (
+//         <span className="px-2 py-2 text-white rounded-full bg-blue-600">
+//             <i className="fi fi-sr-user flex"></i>
+//         </span>
+//     )
+// }

@@ -1,4 +1,4 @@
-import { IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowForward } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
 const LivraisonInfo = ({onOpenLivraison}) => {

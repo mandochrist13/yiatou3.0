@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { samples } from '../../utils/utils';
 import SampleCard from '../SampleCard';
 
 const RelatedProducts = () => {
-    const [isAnimating, setIsAnimating] = useState(false);
+    // const [isAnimating, setIsAnimating] = useState(false);
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        setIsAnimating(true);
-        setTimeout(() => {
-            setIsAnimating(false);
-            navigate('/products');
-        }, 300);
-    };
+    // const handleClick = () => {
+    //     setIsAnimating(true);
+    //     setTimeout(() => {
+    //         setIsAnimating(false);
+    //         navigate('/products');
+    //     }, 300);
+    // };
 
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-            handleClick();
-        }
-    };
+    // const handleKeyDown = (event) => {
+    //     if (event.key === 'Enter' || event.key === ' ') {
+    //         handleClick();
+    //     }
+    // };
     const handleSampleClick = (sampleId) => {
         navigate(`/echantillonDetails/${sampleId}`);
       };
 
-    const products = [
-        { id: 1, imageUrl: '/img/pro/p5.png', price: 2500 },
-        { id: 2, imageUrl: '/img/pro/p6.png', price: 3000 },
-        { id: 3, imageUrl: '/img/pro/p7.png', price: 1800 },
-        { id: 4, imageUrl: '/img/pro/p8.png', price: 3500 },
-    ];
+    // const products = [
+    //     { id: 1, imageUrl: '/img/pro/p5.png', price: 2500 },
+    //     { id: 2, imageUrl: '/img/pro/p6.png', price: 3000 },
+    //     { id: 3, imageUrl: '/img/pro/p7.png', price: 1800 },
+    //     { id: 4, imageUrl: '/img/pro/p8.png', price: 3500 },
+    // ];
 
     return (
         <section className="py-2 border-b-2 border-gray-100 overflow-hidden">

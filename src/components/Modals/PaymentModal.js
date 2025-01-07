@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ModalModel from './ModalModel';
-import ButtonCta from '../Buttons/ButtonCta';
+// import ButtonCta from '../Buttons/ButtonCta';
 import WhatsAppModal from './WhatsAppModal';
 import { formatPrice } from '../../utils/utils';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -120,9 +120,9 @@ const paymentMethods = [
   }
 ];
 
-  const getMethodColor = (methodId) => {
-    return methodId === 'WhatsApp' ? '#05c341' : 'red';
-  };
+  // const getMethodColor = (methodId) => {
+  //   return methodId === 'WhatsApp' ? '#05c341' : 'red';
+  // };
 
   const getBorderClass = (method, isSelected) => {
     if (!isSelected) {

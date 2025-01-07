@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
-import { FaUserLock, FaShoppingCart } from "react-icons/fa";
+import React, { useEffect, useState, useCallback } from "react";
+import { FaUserLock } from "react-icons/fa";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import ModalModel from "../../components/Modals/ModalModel";
 import CoutLivraison from "../../components/Sections/CoutLivraison";
@@ -9,7 +9,7 @@ import SelectProductColor from "../../components/Sections/SelectProductColor";
 import PageLayout from "../layout/PageLayout";
 import BottomBarLayout from "../layout/BottomBarLayout";
 import ButtonCta from "../../components/Buttons/ButtonCta"; 
-import { Products, produits } from "../../utils/utils";
+import { produits } from "../../utils/utils";
 import SliderModel from "../../components/Sliders/SliderModel";
 import DeliveryInfo from "../../components/Sections/DeliveryInfo";
 import Echantillons from "../../components/Sections/Echantillons";

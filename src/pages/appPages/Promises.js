@@ -1,4 +1,4 @@
-import MoreProduct from "../../components/Sections/MoreProduct";
+// import MoreProduct from "../../components/Sections/MoreProduct";
 import TopBarWithButtonBackLikeTemu from "../../components/topBar/TopBarWithButtonBackLikeTemu";
 import PageLayoutLikeTemu from "../layout/PageLayoutLikeTemu";
 

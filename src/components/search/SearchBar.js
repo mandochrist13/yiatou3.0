@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { IoArrowBack } from 'react-icons/io5';
+// import { IoArrowBack } from 'react-icons/io5';
 
 const SearchBar = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
     const [isSearchActive, setIsSearchActive] = useState(false);
-    const [isTransitioning, setIsTransitioning] = useState(false);
+    // const [isTransitioning, setIsTransitioning] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [searchHistory, setSearchHistory] = useState([]);
 

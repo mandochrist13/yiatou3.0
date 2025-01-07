@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Products } from "../../utils/utils";
+// import { Products } from "../../utils/utils";
 
 const useTextAnimation = (texts, interval) => {
  const [currentTextIndex, setCurrentTextIndex] = React.useState(0);
