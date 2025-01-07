@@ -44,7 +44,7 @@ const Femme = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-2 px-3 mb-16 mt-2">
+        <div className="grid grid-cols-2 gap-3 px-3 mb-16 mt-2">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

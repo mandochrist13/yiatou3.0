@@ -7,23 +7,27 @@ import PageLayout from "../layout/PageLayout";
 import Article from "../../components/Articles/Article";
 import { useState } from "react";
 import ShareProduct from "../../components/Modals/ShareProduct";
-import { produits } from "../../utils/utils"; 
+import { produits } from "../../utils/utils";
 import SampleSection from "../../components/SampleSection";
-import '@flaticon/flaticon-uicons/css/all/all.css';
+import "@flaticon/flaticon-uicons/css/all/all.css";
 
 const Home = () => {
-  const [activeShare,setActiveShare] = useState(false);
-  const [product,setProduct] = useState(null);
-  const toggleActiveShare = (selecte) =>{
+  const [activeShare, setActiveShare] = useState(false);
+  const [product, setProduct] = useState(null);
+  const toggleActiveShare = (selecte) => {
     setActiveShare(!activeShare);
     setProduct(selecte);
-  }
+  };
 
   return (
     <PageLayout bottomBar={<BottomBar />} topBar={<TopBar />}>
-      <ShareProduct product={product} toggleActiveShare={toggleActiveShare} activeShare={activeShare}/>
+      <ShareProduct
+        product={product}
+        toggleActiveShare={toggleActiveShare}
+        activeShare={activeShare}
+      />
       <HomeSlider />
-      <div className="mx-3 flex relative gap-3 bg-[#ffe5af] rounded-tl-lg rounded-tr-lg overflow-hidden">
+      {/* <div className="mx-3 flex relative gap-3 bg-[#ffe5af] rounded-lg overflow-hidden">
         <ButtonHome data="entre 10 - 14 jours" icon={<i className="fi fi-rr-shipping-fast text-2xl flex items-center" />}>
           Livraison rapide
         </ButtonHome>
@@ -31,12 +35,38 @@ const Home = () => {
         <ButtonHome data="aux petits oignons" icon={<FaWhatsapp className="flex items-center" />}>
           Service client 
         </ButtonHome>
+      </div> */}
+      <div className="mx-3 flex relative gap-3 bg-gradient-to-r from-yellow-300 to-orange-200 p-2 rounded-lg shadow-lg overflow-hidden">
+        <ButtonHome
+          data="entre 10 - 14 jours"
+          icon={
+            <i className="fi fi-rr-shipping-fast text-2xl flex items-center" />
+          }
+        >
+          Livraison rapide
+        </ButtonHome>
+
+        <div className="absolute left-[50%] top-[50%] h-[70%] w-[2px] bg-white translate-x-[-50%] translate-y-[-50%]"></div>
+
+        <ButtonHome
+          data="aux petits oignons"
+          icon={<FaWhatsapp className="flex items-center text-2xl" />}
+        >
+          Service client
+        </ButtonHome>
       </div>
+
       <SampleSection />
-      <h2 className="px-3 py-1 mt-2 text-md font-bold text-[rgb(51,51,51)]">Les plus achetés</h2>
-      <div className="mx-3 grid grid-cols-2 gap-2">
+      <h2 className="px-3 py-1 mt-2 text-md font-bold text-[rgb(51,51,51)]">
+        Les plus achetés
+      </h2>
+      <div className="mx-3 grid grid-cols-2 gap-3">
         {produits.map((produit, i) => (
-          <Article key={i} product={produit} share={() => toggleActiveShare(produit)} />
+          <Article
+            key={i}
+            product={produit}
+            share={() => toggleActiveShare(produit)}
+          />
         ))}
       </div>
     </PageLayout>

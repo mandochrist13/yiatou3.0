@@ -13,7 +13,7 @@ export default function Promises() {
         />
       }
     >
-      <div className="px-3 bg-white">
+      <div className="px-3 mt-10 bg-white">
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
           <div className="space-y-3">
             <div className="flex items-center gap-3">

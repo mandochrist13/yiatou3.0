@@ -29,7 +29,7 @@ const Promises = ({ className }) => {
             <h2 className="text-sm text-white font-bold leading-none">Nos promesses</h2>
           </div>
           <button 
-            className={`text-black rounded-full p-1 transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-300 ${isAnimating ? 'transform scale-110' : ''}`} 
+            className={`text-black rounded-full p-1 transition-transform ${isAnimating ? 'transform scale-110' : ''}`} 
             onClick={handleClick}
             onKeyDown={handleKeyDown}
             aria-label="Voir plus de détails sur nos promesses"

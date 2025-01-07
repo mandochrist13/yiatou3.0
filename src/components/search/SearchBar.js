@@ -63,12 +63,12 @@ const SearchBar = () => {
         <>
             <div className={`${isSearchActive ? 'fixed inset-0 bg-white z-50' : 'contents'}`}>
                 <form onSubmit={handleSubmit} className={`transition-all duration-300 ${containerClass}`}>
-                    <div className="relative w-full flex items-center gap-2 mt-1">
+                    <div className="relative w-full flex items-center mt-1">
                         {isSearchActive && (
                             <button
                                 type="button"
                                 onClick={handleBackClick}
-                                className="p-2 focus:outline-none"
+                                className="pr-2 focus:outline-none"
                                 aria-label="Retour"
                             >
                                 <i className="fi fi-br-angle-left w-6 h-6"></i>

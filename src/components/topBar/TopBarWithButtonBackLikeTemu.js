@@ -25,7 +25,7 @@ const TopBarWithButtonBackLikeTemu = ({ link, className = "", title }) => {
           <FaChevronLeft className="text-md text-[#333333]" />
         </Link>
         
-        <div className="flex-1 flex justify-center items-center transition-all duration-300">
+        <div className="flex-1 flex justify-center mt-10 items-center transition-all duration-300">
           <div className="flex items-center gap-2 justify-center">
             <img 
               src="/icons/shield-check.svg" 
