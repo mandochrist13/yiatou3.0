@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "klavika-bold";
+    src: url('/fonts/Klavika/klavika-bold.otf');
+}
+@font-face {
+    font-family: "klavika-bold-italic";
+    src: url('/fonts/Klavika/klavika-bold-italic.otf');
+}
+@font-face {
+    font-family: "klavika-light-italic";
+    src: url('/fonts/Klavika/klavika-light-italic.otf');
+}
+@font-face {
+    font-family: "klavika-light";
+    src: url('/fonts/Klavika/klavika-light.otf');
+}
+@font-face {
+    font-family: "klavika-medium-italic";
+    src: url('/fonts/Klavika/klavika-medium-italic.otf');
+}
+@font-face {
+    font-family: "klavika-medium";
+    src: url('/fonts/Klavika/klavika-medium.otf');
+}
+@font-face {
+    font-family: "klavika-medium-regular";
+    src: url('/fonts/Klavika/klavika-regular-italic.otf');
+}

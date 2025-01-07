@@ -1,0 +1,35 @@
+@import "~@flaticon/flaticon-uicons/css/all/all";
+@import "~@flaticon/flaticon-uicons/css/brands/all";
+
+.nav-link{
+    padding: 10px 40px;
+    &.active{
+        border-bottom: solid 2px #000;
+    }
+}
+.hidden-scroll{
+    scrollbar-width: none;
+}
+.rounded-modal{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.bottom-modal{
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+    .modal-content{
+        transform: translateY(100%);
+        transition: 0.3s;
+    }
+    &.active{
+        pointer-events: initial;
+        opacity: 1;
+        .modal-content{
+            transform: translateY(0%);
+        }
+    }
+}
+.slick-dots{
+    transform: translate(0,-180%);
+}
