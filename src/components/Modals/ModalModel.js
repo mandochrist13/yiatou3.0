@@ -10,7 +10,7 @@ const ModalModel = ({title = "", icon = null, active = true, topContent = null, 
     return (
         <div className={`fixed inset-0 z-[1000] flex items-end justify-center ${active ? '' : 'pointer-events-none'}`}>
             <div 
-                className={`fixed inset-0 bg-black transition-opacity duration-300 ease-in-out ${active ? 'bg-opacity-70' : 'bg-opacity-0 pointer-events-none'}`} 
+                className={`fixed inset-0  bg-black transition-opacity duration-300 ease-in-out ${active ? 'bg-opacity-70' : 'bg-opacity-0 pointer-events-none'}`} 
                 onClick={handleClose}
             ></div>
             <div 

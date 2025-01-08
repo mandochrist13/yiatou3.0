@@ -9,7 +9,7 @@ const PageLayout = ({ children, topBar = false, bottomBar = false, className = "
                 {children}
             </div>
             {bottomBar && (
-                <div className="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-top">
+                <div className="fixed bottom-0 left-0 right-0 z-40 bg-white shadow-top">
                     {bottomBar}
                 </div>
             )}

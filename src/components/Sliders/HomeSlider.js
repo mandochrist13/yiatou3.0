@@ -14,8 +14,8 @@ const HomeSlider = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: "10px",
+          height: "10px",
           borderRadius: "50%",
           backgroundColor: "#000",
           margin: "0 5px",
@@ -28,7 +28,7 @@ const HomeSlider = () => {
       <div
         style={{
           position: "absolute",
-          bottom: "-20px",
+          bottom: "-25px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

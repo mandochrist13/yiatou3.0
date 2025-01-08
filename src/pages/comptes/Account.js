@@ -49,9 +49,9 @@ const Account = () => {
           <div>
             <p className="flex items-center gap-2 font-medium">
               <span>Dave</span>
-              <span className="text-blue-700">
+              {/* <span className="text-blue-700">
                 <i className="fi fi-sr-check-circle" />
-              </span>
+              </span> */}
             </p>
             <p className="text-[13px] font-medium text-gray-600">
               abcdef@gmail.com

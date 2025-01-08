@@ -27,7 +27,7 @@ const Home = () => {
         activeShare={activeShare}
       />
       <HomeSlider />
-      {/* <div className="mx-3 flex relative gap-3 bg-[#ffe5af] rounded-lg overflow-hidden">
+      <div className="mx-3 flex relative gap-3 bg-[#ffe5af] rounded-lg overflow-hidden">
         <ButtonHome data="entre 10 - 14 jours" icon={<i className="fi fi-rr-shipping-fast text-2xl flex items-center" />}>
           Livraison rapide
         </ButtonHome>
@@ -35,26 +35,8 @@ const Home = () => {
         <ButtonHome data="aux petits oignons" icon={<FaWhatsapp className="flex items-center" />}>
           Service client 
         </ButtonHome>
-      </div> */}
-      <div className="mx-3 flex relative gap-3 bg-gradient-to-r from-yellow-300 to-orange-200 p-2 rounded-lg shadow-lg overflow-hidden">
-        <ButtonHome
-          data="entre 10 - 14 jours"
-          icon={
-            <i className="fi fi-rr-shipping-fast text-2xl flex items-center" />
-          }
-        >
-          Livraison rapide
-        </ButtonHome>
-
-        <div className="absolute left-[50%] top-[50%] h-[70%] w-[2px] bg-white translate-x-[-50%] translate-y-[-50%]"></div>
-
-        <ButtonHome
-          data="aux petits oignons"
-          icon={<FaWhatsapp className="flex items-center text-2xl" />}
-        >
-          Service client
-        </ButtonHome>
-      </div>
+      </div> 
+      
 
       <SampleSection />
       <h2 className="px-3 py-1 mt-2 text-md font-bold text-[rgb(51,51,51)]">

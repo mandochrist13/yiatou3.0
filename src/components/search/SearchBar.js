@@ -57,7 +57,7 @@ const SearchBar = () => {
     const borderClass = (hasScrolled || isSearchActive) ? 'border-black' : 'border-[#cccccc]';
     const inputClass = (hasScrolled || isSearchActive) ? 'bg-white text-black placeholder-gray-400' : 'bg-white text-black placeholder-gray-500';
     const iconClass = (hasScrolled || isSearchActive) ? 'text-black' : 'text-gray-400';
-    const containerClass = isSearchActive ? 'fixed top-0 left-0 w-full bg-white z-50 px-4 py-3' : 'flex items-center w-full max-w-[640px] px-1 md:px-6 lg:px-8';
+    const containerClass = isSearchActive ? 'fixed top-0 left-0 w-full bg-white z-50 px-3 py-3' : 'flex items-center w-full max-w-[640px] px-1 md:px-6 lg:px-8';
     
     return (
         <>
@@ -68,7 +68,7 @@ const SearchBar = () => {
                             <button
                                 type="button"
                                 onClick={handleBackClick}
-                                className="pr-2 focus:outline-none"
+                                className="pr-1 focus:outline-none"
                                 aria-label="Retour"
                             >
                                 <i className="fi fi-br-angle-left w-6 h-6"></i>

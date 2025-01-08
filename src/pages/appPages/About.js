@@ -39,9 +39,9 @@ export default function About() {
             <p className="py-3 font-medium text-[#333333]">
             Rejoins Yiatou dès maintenant et fais partie de la communauté des gens les plus heureux de la toile !
             </p>
-            <button className="border-2 w-full py-2 mt-4 border-purple-500 rounded text-purple-500 font-medium">
+            {/* <button className="border-2 w-full py-2 mt-4 border-purple-500 rounded text-purple-500 font-medium">
                 Clique ici pour en savoir plus
-            </button>
+            </button> */}
         </div>
         <div className="-translate-y-6">
         <MoreProduct/>

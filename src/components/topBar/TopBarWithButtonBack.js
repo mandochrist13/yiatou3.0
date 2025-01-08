@@ -30,9 +30,9 @@ const TopBarWithButtonBack = ({title = null, link = -1}) => {
           aria-label="Retour"
           tabIndex={0}
         >
-          <i className="fi fi-br-angle-left w-6 h-6 mt-2"></i>
+          <i className="fi fi-br-angle-left flex items-center justify-center text-md w-6 h-6"></i>
         </button>
-        <h2 className="text-lg font-medium w-full ml-3">{title}</h2>
+        <h2 className="text-lg font-medium w-full ml-4">{title}</h2>
       </div>
     </TopBarLayout>
   );

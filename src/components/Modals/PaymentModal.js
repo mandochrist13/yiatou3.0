@@ -132,8 +132,8 @@ const paymentMethods = [
     }
     
     return method === 'WhatsApp' 
-      ? 'border-[#05c341] shadow-lg scale-105'
-      : 'border-red-600 shadow-lg scale-105';
+      ? 'border-[#05c341] shadow-lg shadow-[#04c241]/40 scale-105'
+      : 'border-red-600 shadow-lg shadow-red-300 scale-105';
   };
 
   return (
@@ -163,7 +163,7 @@ const paymentMethods = [
                 <>
                   <div className={`
                     absolute -top-8 -right-8 w-16 h-16 
-                    ${method.id === 'WhatsApp' ? 'bg-[#04c241]' : 'bg-red-500'} 
+                    ${method.id === 'WhatsApp' ? 'bg-[#04c241] ' : 'bg-red-500'} 
                     rotate-45
                   `} />
                   <div className="absolute top-1 right-1">

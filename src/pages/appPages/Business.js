@@ -44,15 +44,15 @@ const Business = () => {
                 gagne en indépendance et construis un avenir prometteur avec Yiatou.
             </p>
 
-            <button 
+            {/* <button 
                 className="border-2 w-full py-2 mt-4 border-purple-500 rounded text-purple-500 font-medium"
                 aria-label="En savoir plus sur le lancement de business"
                 tabIndex={0}
-                onClick={() => {/* Action à définir */}}
+                onClick={() => {   }}
                 onKeyDown={(e) => e.key === 'Enter' && e.target.click()}
             >
                 Clique ici pour en savoir plus
-            </button>
+            </button> */}
         </div>
         <div className="-translate-y-6">
             <MoreProduct/>

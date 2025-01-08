@@ -7,7 +7,7 @@ import TopBarWithButtonBack from "../../components/topBar/TopBarWithButtonBack";
 export default function Historique() {
   return (
     <PageLayout className="bg-background" bottomBar={<BottomBar/>} topBar={<TopBarWithButtonBack link='/account' title="Mes commandes"/>}>
-        <ul className="flex justify-center items-center gap-6 py-4 mt-10">
+        <ul className="flex z-[1000] justify-center items-center gap-6 py-4 mt-10">
             <li>
                 <NavLink to="historique" className='nav-link'>Récents</NavLink>
             </li>
