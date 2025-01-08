@@ -11,7 +11,7 @@ const MoreProduct = () => {
         setIsAnimating(true);
         setTimeout(() => {
             setIsAnimating(false);
-            navigate('/products'); // Ajustez la route selon vos besoins
+            navigate('/listEchantillon'); // Ajustez la route selon vos besoins
         }, 300);
     };
 
@@ -39,10 +39,10 @@ const MoreProduct = () => {
           <div className="flex justify-between items-center px-3">
             <div className="flex items-center justify-between w-full ">
               <h3 className="font-medium text-md ">D'autres articles intéressants</h3>
-              <div className="flex items-center ">
-                <span className="text-[#333333] text-[12px] font-base mr-1">Voir plus</span>
+              <div className=" ">
+                
                 <button
-                  className={`p-1 text-[#333333] rounded-full transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-300 ${
+                  className={`p-1 flex items-center text-[#333333] rounded-full transition-transform  ${
                     isAnimating ? 'transform scale-110' : ''
                   }`}
                   onClick={handleClick}
@@ -50,6 +50,7 @@ const MoreProduct = () => {
                   aria-label="Voir plus de détails sur les échantillons"
                   tabIndex={0}
                 >
+                  <span className="text-[#333333] text-[12px] font-base mr-1">Voir plus</span>
                   <FaChevronRight className="text-xs" />
                 </button>
               </div>

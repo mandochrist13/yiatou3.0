@@ -16,15 +16,13 @@ export default function MonArgent() {
     setWithdrawModal(!withdrawModal);
   };
   return (
-    <PageLayout
-      bottomBar={<BottomBar />}
-    >
+    <PageLayout bottomBar={<BottomBar />}>
       <ModalModel
         onClose={toggleModalMoney}
         active={moneyModal}
         title="Informations de paiement"
       >
-        <PaiementInformations 
+        <PaiementInformations
           setMoneyModal={setMoneyModal}
           setWithdrawModal={setWithdrawModal}
         />
@@ -37,9 +35,14 @@ export default function MonArgent() {
         <WithdrawInformation />
       </ModalModel>
       <div className="flex flex-col">
-        <Header onGetMoney={toggleModalMoney} onWithdraw={toggleWithdrawModal} />
+        <Header
+          onGetMoney={toggleModalMoney}
+          onWithdraw={toggleWithdrawModal}
+        />
         <div className="flex flex-col gap-5 px-3">
-          <p className="my-5 text-center font-medium text-gray-600">20/06/2024</p>
+          <p className="my-5 text-center font-medium text-gray-600">
+            20/06/2024
+          </p>
           <MoneyItem />
           <MoneyItem />
           <MoneyItem />
@@ -66,17 +69,18 @@ const Header = ({ onGetMoney, onWithdraw }) => {
   //   }
   // };
   return (
-    <header className="sticky top-0 z-10 w-full h-[150px] bg-green-200 rounded-b-[30px] px-3 flex flex-col justify-center items-start">
-      <p className="font-medium -translate-y-2">Solde actuel</p>
-      <p className="flex gap-3 items-end">
-        <span className="font-bold text-3xl">6,500</span>
-        <span className="font-medium">FCFA</span>
+    <header className="sticky top-0 z-10 w-full h-[150px] bg-green-200 rounded-b-[30px] px-4 flex flex-col justify-center items-start shadow-md">
+      <p className="text-gray-700 font-medium -translate-y-2">Solde actuel</p>
+      <p className="flex gap-2 items-end mt-1">
+        <span className="font-bold text-3xl text-gray-800">6,500</span>
+        <span className="font-medium text-gray-600">FCFA</span>
       </p>
       <button
         onClick={handleClick}
-        className="bg-gray-300 hover:bg-gray-400 transition-colors my-3 font-medium px-5 py-2 rounded-full"
+        className="flex items-center gap-2 bg-gray-300 hover:bg-gray-400 transition-all mt-3 font-medium px-6 py-2 rounded-full text-sm text-gray-800 shadow-md hover:shadow-lg"
         aria-label="Retirer l'argent"
       >
+        
         Retirer
       </button>
     </header>
@@ -127,7 +131,10 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
         <br />
         Ces informations resteront privées.
       </p>
-      <form onSubmit={handleSubmit} className="mt-[10px] mb-2 flex flex-col gap-3">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-[10px] mb-2 flex flex-col gap-3"
+      >
         <div className="flex gap-4 items-center">
           <div className="flex gap-2 items-center">
             <input type="radio" name="sexe" id="m" />
@@ -177,11 +184,16 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
           <option value="Eleve">Employé</option>
           <option value="Eleve">J'ai une bricole</option>
         </select>
-        <Link to="#" className="text-[13px] text-gray-600 flex gap-2 items-center mb-2">
+        <Link
+          to="#"
+          className="text-[13px] text-gray-600 flex gap-2 items-center mb-2"
+        >
           <span className="text-[16px]">
             <i class="fi fi-rr-user-lock"></i>
           </span>
-          <span className="underline">Voir notre politique de confidentialite</span>
+          <span className="underline">
+            Voir notre politique de confidentialite
+          </span>
         </Link>
         <button
           type="submit"
@@ -196,38 +208,76 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
 
 const WithdrawInformation = () => {
   const [showInfoBubble, setShowInfoBubble] = useState(false);
-
+  const [showInfoBubble1, setShowInfoBubble1] = useState(false);
   const handleInfoClick = () => {
     setShowInfoBubble(!showInfoBubble);
+  };
+
+  const handleInfoClick1 = () => {
+    setShowInfoBubble1(!showInfoBubble1);
   };
 
   return (
     <div className="flex flex-col gap-4">
       <div className="bg-gray-100 px-3 py-5 -mx-3">
-        <div className="flex justify-between items-center max-w-md mx-auto">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-xl">6,500 FCFA</span>
-            <FaLock className="text-gray-600" />
+        <div className="flex flex-col items-center max-w-md mx-auto bg-white p-4 rounded-lg shadow-md">
+          {/* Solde bloqué */}
+          <div className="flex justify-between items-center w-full mb-4">
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-xl text-gray-400 opacity-60">
+                6,500 FCFA
+              </span>
+              <FaLock className="text-gray-400" />
+              <button
+                onClick={handleInfoClick1}
+                className="relative inline-flex items-center text-gray-500 hover:text-gray-700"
+                aria-label="Plus d'informations"
+              >
+                <HelpCircle className="w-5 h-5 font-bold" />
+                {showInfoBubble1 && (
+                  <div className="absolute bottom-full right-0 mb-2 w-[240px] p-3 bg-gray-800 text-white text-xs rounded-lg shadow-lg z-10">
+                    <p>
+                      Il s'agit d'un gain potentielement gagner à travers un
+                      partage, mais la commission n'a pas encore été encaisser
+                    </p>
+                    <div className="absolute bottom-[-6px] right-3 w-3 h-3 bg-gray-800 transform rotate-45"></div>
+                  </div>
+                )}
+              </button>
+            </div>
+            <span className="text-sm text-gray-500 italic">
+              Commission en attente
+            </span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-xl">6,500 FCFA</span>
-            <FaCoins 
-              className="text-yellow-500 text-2xl animate-bounce" 
-              style={{ 
-                animation: 'bounce 1s infinite',
-                animationDuration: '2s'
-              }} 
-            />
+
+          {/* Solde disponible */}
+          <div className="flex justify-between items-center w-full">
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-xl text-green-700">
+                6,500 FCFA
+              </span>
+              <FaCoins
+                className="text-yellow-500 text-2xl animate-bounce"
+                style={{
+                  animation: "bounce 1s infinite",
+                  animationDuration: "2s",
+                }}
+              />
+            </div>
+            <span className="text-sm text-gray-600 italic">
+              Solde disponible
+            </span>
           </div>
         </div>
       </div>
-      
+
       <div className="px-0">
         <div className="relative text-gray-600">
           <p className="text-sm text-center">
-            En continuant, vous reconnaissez avoir lu et approuvé notre politique de paiement
+            En continuant, vous reconnaissez avoir lu et approuvé notre
+            politique de paiement
           </p>
-          <button 
+          <button
             onClick={handleInfoClick}
             className="inline-flex items-center text-gray-500 hover:text-gray-700 transition-colors absolute right-0 -translate-y-4 -translate-x-4"
             aria-label="Plus d'informations"
@@ -236,8 +286,9 @@ const WithdrawInformation = () => {
             {showInfoBubble && (
               <div className="absolute bottom-full right-0 mb-2 w-[280px] p-3 bg-gray-800 text-white text-xs rounded-lg shadow-lg">
                 <p>
-                  En effectuant un retrait, vous acceptez nos conditions générales de paiement. 
-                  Les retraits sont traités sous 24-48h ouvrables.
+                  En effectuant un retrait, vous acceptez nos conditions
+                  générales de paiement. Les retraits sont traités sous 24-48h
+                  ouvrables.
                 </p>
                 <div className="absolute bottom-[-6px] right-3 w-3 h-3 bg-gray-800 transform rotate-45"></div>
               </div>
