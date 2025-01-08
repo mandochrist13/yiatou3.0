@@ -57,7 +57,7 @@ const DetailsProduct = ({product}) => {
                 </p>
                 <button 
                     onClick={toggleModal} 
-                    className="flex justify-center items-center gap-5 py-3 rounded bg-red-200 text-[#333333] border-dashed border-2  border-[#ef4444]"
+                    className="flex justify-center animate-shimmer bg-[linear-gradient(110deg,#ffcccc,45%,#fff,55%,#ffcccc)] bg-[length:200%_100%] items-center gap-5 py-3 rounded text-[#333333] border-dashed border-2  border-[#ef4444]"
                 >
                     <span className="font-medium">Partages pour gagner <strong>1500 FCFA</strong></span>
                     <i className="fi fi-br-refer-arrow"></i> 

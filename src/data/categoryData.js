@@ -80,6 +80,7 @@ export const categoryItems = [
   }
 ];
 
+
 export const subCategories = {
   all: ['Nouveautés', 'Tendances', 'Promotions', 'Collections'],
   robes: ['Robes courtes', 'Robes longues', 'Robes de soirée', 'Robes casual'],
@@ -87,4 +88,95 @@ export const subCategories = {
   pantalons: ['Jeans', 'Pantalons classiques', 'Leggings', 'Shorts'],
   jupes: ['Mini jupes', 'Jupes midi', 'Jupes longues', 'Jupes plissées'],
   accessoires: ['Sacs', 'Bijoux', 'Ceintures', 'Écharpes']
+}; 
+
+export const echantillonItems = [
+  {
+    id: 'all',
+    title: 'Tout',
+    image: '/img/pro/p1.png',
+    link: '/femme/all'
+  },
+  {
+    id: 1,
+    title: 'Sac',
+    image: '/img/pro/p2.png',
+    link: '/femme/robes',
+    category: 'sac'
+  },
+  {
+    id: 2,
+    title: 'Outils',
+    image: '/img/pro/p4.png',
+    link: '/femme/tops',
+    category: 'outils'
+  },
+  {
+    id: 3,
+    title: 'Sport',
+    image: '/img/pro/p6.png',
+    link: '/femme/pantalons',
+    category: 'sport'
+  },
+  {
+    id: 4,
+    title: 'Accessoires',
+    image: '/img/pro/p12.png',
+    link: '/femme/jupes',
+    category: 'accessoires'
+  },
+  {
+    id: 5,
+    title: 'Electronique',
+    image: '/img/pro/p7.png',
+    link: '/femme/accessoires',
+    category: 'electronique'
+  }
+];
+
+export const echantillon = [
+  {
+    id: 1,
+    title: 'Sac',
+    image: '/img/pro/p2.png',
+    price: 2000,
+    category: 'sac'
+  },
+  {
+    id: 2,
+    title: 'Outils',
+    image: '/img/pro/p4.png',
+    price: 200,
+    category: 'outils'
+  },
+  {
+    id: 3,
+    title: 'Sport',
+    image: '/img/pro/p6.png',
+    price: 200,
+    category: 'sport'
+  },
+  {
+    id: 4,
+    title: 'Accessoires',
+    image: '/img/pro/p12.png',
+    price: 200,
+    category: 'accessoires'
+  },
+  {
+    id: 5,
+    title: 'Electronique',
+    image: '/img/pro/p7.png',
+    price: 200,
+    category: 'electronique'
+  }
+];
+
+export const subEchantillonItems = {
+  all: ['Nouveauts', 'Tendances', 'Promotions', 'Collections'],
+  sac: ['Sac'],
+  outils: ['Outils'],
+  sport: ['Sport'],
+  accessoires: ['Accessoires'],
+  electronique: ['Electronique']
 }; 

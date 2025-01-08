@@ -9,7 +9,7 @@ const SampleSection = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/echantillonDetails');
+    navigate('/listEchantillon');
   };
 
   const handleKeyDown = (event) => {
@@ -30,15 +30,14 @@ const SampleSection = () => {
       <div className="flex justify-between items-center px-3">
         <div className="flex items-center justify-between w-full mt-2">
           <h2 className="text-md font-bold text-[#333333]">Échantillons</h2>
-          <div className="flex items-center mr-3">
-            <span className="text-[#333333] text-xs font-normal">Voir plus</span>
+          <div className="">
             <button
-              className="text-[#333333] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-300"
+              className="text-[#333333] flex items-center mr-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-300"
               onClick={handleNavigate}
               onKeyDown={handleKeyDown}
               aria-label="Voir plus de détails sur les échantillons"
               tabIndex={0}
-            >
+            >  <span className="text-[#333333] text-xs font-normal">Voir plus</span>
               <FaChevronRight className="text-xs" />
             </button>
           </div>

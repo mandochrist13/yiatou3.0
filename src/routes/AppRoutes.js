@@ -22,10 +22,12 @@ import Conditions from "../pages/appPages/Conditions";
 import Promises from "../pages/appPages/Promises";
 import Cart from "../pages/cart/Cart";
 import EchantillonDetails from "../pages/echantillonDetails/EchantillonDetails";
+import ListEchantillon from "../pages/listEchantillon/listEchange";
 import PaymentConfirmation from "../pages/payment-confirmation/PaymentConfirmation";
 import Affiliation from "../pages/appPages/Affiliation";
 import Retour from "../pages/appPages/Retour";
 import Business from "../pages/appPages/Business";
+import Paiement from "../pages/appPages/Paiement";
 import Electronique from "../pages/categories/Electronique";
 import Femme from "../pages/categories/Femme";
 import Beaute from "../pages/categories/Beaute";
@@ -59,10 +61,13 @@ const AppRoutes = () => {
             <Route path="/promises" element={<Promises/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/echantillonDetails/:id" element={<EchantillonDetails />} />
+            <Route path="/echantillonDetails" element={<EchantillonDetails />} />
+            <Route path="/listEchantillon" element={<ListEchantillon />} />
             <Route path="/payment-confirmation" element={<PaymentConfirmation />} />
             <Route path="/affiliation" element={<Affiliation/>}/>
             <Route path="/retour" element={<Retour/>}/>
             <Route path="/business" element={<Business/>}/>
+            <Route path="/paiement" element={<Paiement/>}/>
             <Route path="/electronique" element={<Electronique/>}/>
             <Route path="/femme" element={<Femme/>}/>
             <Route path="/beaute" element={<Beaute/>}/>

@@ -15,6 +15,11 @@ const NavLinks = () => {
                     className="w-auto px-2" 
                 />
                 <NavLink 
+                    to="/listEchantillon" 
+                    label="Echantillon" 
+                    className="w-auto px-2" 
+                />
+                <NavLink 
                     to="/femme" 
                     label="Femme" 
                     className="w-auto px-2" 

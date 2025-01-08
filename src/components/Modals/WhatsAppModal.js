@@ -19,11 +19,11 @@ const WhatsAppModal = ({ isOpen, onClose, onConfirm }) => {
     >
       <div className="flex flex-col items-center px-4">
         <div className="flex-1 flex flex-col items-center justify-center w-full mb-6">
-          <div className="w-24 h-24">
+          <div className=" mb-4 ">
             <img 
-              src="/img/pro/whatsappbusiness.png"
+              src="/img/pro/whatsappbusiness.jpeg"
               alt="WhatsApp Business"
-              className="w-full h-full object-contain"
+              className="w-[69px] h-[69px] object-contain"
             />
           </div>
           

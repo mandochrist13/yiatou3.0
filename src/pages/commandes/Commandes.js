@@ -20,6 +20,9 @@ const Commandes = () => {
     const handleTotalChange = (newTotal) => {
         setTotalAmount(newTotal);
     };
+    const handleOpenLivraison = () => {
+        console.log("Modal Livraison ouverte !");
+    };
 
     const handleSaveLivraison = (selectedAddress) => {
         setLivraisonInfo({
@@ -41,7 +44,8 @@ const Commandes = () => {
             <ModalModel onClose={() => {/* ... */}} active={false} title='Nouvelle Adresse'>
                 <CreateLivraison/>
             </ModalModel>
-            <LivraisonInfo 
+            <LivraisonInfo
+            onOpenLivraison={handleOpenLivraison}
                 info={livraisonInfo}
                 onEditClick={() => setShowAddLivraison(true)}
             />

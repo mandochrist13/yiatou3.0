@@ -11,9 +11,9 @@ const MessageItem = () => {
                 <p>Argent</p>
             </div>
             <div className="flex flex-col gap-3">
-                <p className="font-medium text-gray-600">Pour les messages de retrait, tu reproduits ce qui est là et tu changes juste les valeurs des retraits pour faire réel. Les liens de réclamation mènent sur WhatsApp avec le Message "Bonjour ! Je n'ai toujours reçu mon retrait de 5,000 FCFA."</p>
+                <p className="font-normal text-gray-600">Pour les messages de retrait, tu reproduits ce qui est là et tu changes juste les valeurs des retraits pour faire réel. Les liens de réclamation mènent sur WhatsApp avec le Message "Bonjour ! Je n'ai toujours reçu mon retrait de 5,000 FCFA."</p>
                 <Link to="#" className="font-medium underline text-gray-800">Voir l'article</Link>
-                <p className="font-medium text-end text-gray-500">10h36</p>
+                <p className="font-normal text-end text-gray-500">10h36</p>
             </div>
         </div>
     );
