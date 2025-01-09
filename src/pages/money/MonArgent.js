@@ -1,4 +1,4 @@
-import { FaImage, FaLock, FaCoins } from "react-icons/fa";
+import { FaImage, FaCoins } from "react-icons/fa";
 import { HelpCircle } from "lucide-react";
 import BottomBar from "../../components/bottomBar/BottomBar";
 import PageLayout from "../layout/PageLayout";
@@ -220,14 +220,14 @@ const WithdrawInformation = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="bg-gray-100 px-3 py-5 -mx-3">
-        <div className="flex flex-col items-center max-w-md mx-auto bg-white p-4 rounded-lg shadow-md">
+        <div className="flex justify-center items-center max-w-md bg-white py-6 rounded-lg shadow-md">
           {/* Solde bloqué */}
-          <div className="flex justify-between items-center w-full mb-4">
+          <div className="flex flex-col justify-between items-center w-full">
             <div className="flex items-center gap-2">
               <span className="font-bold text-xl text-gray-400 opacity-60">
                 6,500 FCFA
               </span>
-              <FaLock className="text-gray-400" />
+              {/* <FaLock className="text-gray-400" /> */}
               <button
                 onClick={handleInfoClick1}
                 className="relative inline-flex items-center text-gray-500 hover:text-gray-700"
@@ -246,12 +246,12 @@ const WithdrawInformation = () => {
               </button>
             </div>
             <span className="text-sm text-gray-500 italic">
-              Commission en attente
+              En attente
             </span>
           </div>
 
           {/* Solde disponible */}
-          <div className="flex justify-between items-center w-full">
+          <div className="flex flex-col justify-between items-center w-full">
             <div className="flex items-center gap-2">
               <span className="font-bold text-xl text-green-700">
                 6,500 FCFA
