@@ -18,19 +18,17 @@ const EchantillonCard = ({ echantillon }) => {
 
       <div className="p-2 flex flex-col justify-between flex-shrink-0">
         {/* Description */}
-        <p className="text-[#333333] font-bold text-md mb-0.3">
+        <p className="text-[#333333] text-xs leading-tight block mb-0.5 whitespace-nowrap overflow-hidden text-ellipsis">
           {echantillon.title}
         </p>
 
-        {/* Price */}
+        
+
+        <div className="flex justify-between items-center">
+          {/* Price */}
         <p className="text-[#333333] font-semibold text-sm mb-0.3">
           {echantillon.price.toFixed(2)} FCFA
         </p>
-
-        <div className="flex justify-between items-center">
-          <p className="text-[12px] font-base leading-tight text-gray-600">
-            Echantillon
-          </p>
           {/* Share Button */}
           <button
             className="bg-gray-100 p-1.5 rounded-full transition-transform duration-300 ease-in-out hover:rotate-180 focus:rotate-180"

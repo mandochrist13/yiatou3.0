@@ -211,9 +211,9 @@ const PersonnalInfo = () => {
           <option value="" disabled selected>
             Choisissez une zone de livraison
           </option>
-          <option value="libreville">Libreville</option>
-          <option value="akanda">Akanda</option>
-          <option value="owendo">Owendo</option>
+          <option value="libreville">2000 FCFA - Libreville</option>
+          <option value="akanda">2500 FCFA - Akanda</option>
+          <option value="owendo">2500 FCFA - Owendo</option>
         </select>
         <textarea
           name="adresse"

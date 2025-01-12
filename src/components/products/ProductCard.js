@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
 
       <div className="p-2 flex flex-col justify-between flex-shrink-0">
         {/* Description */}
-        <p className="text-[#333333] font-bold text-md mb-0.3">
+        <p className="text-[#333333] text-xs leading-tight block mb-0.5 whitespace-nowrap overflow-hidden text-ellipsis">
           {product.title}
         </p>
 

@@ -117,6 +117,20 @@ const OrderFees = ({ insuranceFee, paymentFee, isInsuranceChecked, onInsuranceCh
             <p className="text-sm">{paymentFee.toLocaleString()} FCFA</p>
         </div>
 
+        <div className="mb-3 flex justify-between items-center">
+            <div className="flex items-center gap-2">
+                <span className="font-medium text-sm">Frais livraison</span>
+                <button
+                    onClick={() => onInfoClick('fraisPaiement')}
+                    className="text-gray-500"
+                    aria-label="Information sur les frais de livraison"
+                >
+                    <HelpCircle className="w-4 h-4" />
+                </button>
+            </div>
+            <p className="text-sm">{paymentFee.toLocaleString()} FCFA</p>
+        </div>
+
         <div className="w-full h-[1px] bg-gray-200 mb-3" />
     </>
 );

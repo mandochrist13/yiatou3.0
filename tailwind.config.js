@@ -60,7 +60,7 @@ module.exports = {
         "scale-up": "scale-up 0.3s ease-out",
         fadeIn: "fadeIn 0.3s ease-in-out",
         levitate: "levitate 2s ease-in-out infinite",
-        shimmer: "shimmer 2s linear infinite",
+        shimmer: "shimmer 7s linear infinite",
       },
     },
   },

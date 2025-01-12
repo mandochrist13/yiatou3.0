@@ -29,9 +29,7 @@ export const produits = [
     new Products(6, 'Bouteille de champagne', "Description du produit 4...", ['/img/pro/champagne.jpg','/img/pro/champagne.jpg'], 3500, false, 10),
 ]
 export const sliders = [
-    // '/img/slides/s1.png',
-    // '/img/slides/s2.png',
-    // '/img/slides/s3.png',
+
     '/img/slides/s4.jpeg',
     '/img/slides/s5.jpeg',
     '/img/slides/s6.jpeg',

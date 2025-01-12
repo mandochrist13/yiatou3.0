@@ -41,7 +41,7 @@ const HomeSlider = () => {
   };
 
   return (
-    <Slider arrows={false} {...settings} className="w-full mt-36 h-auto">
+    <Slider arrows={false} {...settings} className="w-full mt-[138px] h-auto">
       {sliders.map((img, i) => (
         <div
           key={i}
