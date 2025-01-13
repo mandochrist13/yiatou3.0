@@ -132,8 +132,8 @@ const paymentMethods = [
     }
     
     return method === 'WhatsApp' 
-      ? 'border-[#05c341] shadow-lg shadow-[#04c241]/40 scale-105'
-      : 'border-red-600 shadow-lg shadow-red-300 scale-105';
+      ? 'border-[#05c341] focus:outline-[#04c241]/40 scale-105'
+      : 'border-red-600 focus:outline-red-300 scale-105';
   };
 
   return (
@@ -155,7 +155,7 @@ const paymentMethods = [
                 transition-all duration-300 ease-in-out
                 flex flex-col items-center gap-4
                 overflow-hidden
-                focus:outline-none
+                
                 ${getBorderClass(method.id, selectedMethod === method.id)}
               `}
             >

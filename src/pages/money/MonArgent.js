@@ -80,7 +80,6 @@ const Header = ({ onGetMoney, onWithdraw }) => {
         className="flex items-center gap-2 bg-gray-300 hover:bg-gray-400 transition-all mt-3 font-medium px-6 py-2 rounded-full text-sm text-gray-800 shadow-md hover:shadow-lg"
         aria-label="Retirer l'argent"
       >
-        
         Retirer
       </button>
     </header>
@@ -127,7 +126,7 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
     <>
       <p className="text-sm text-gray-700 px-3 text-center -translate-y-7">
         Ces informations permettent à Yiatou de traiter tes paiements et de
-        verifier que tu n'est pas mineur.
+        verifier que tu n'es pas mineur.
         <br />
         Ces informations resteront privées.
       </p>
@@ -157,15 +156,19 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
           placeholder="Prenoms"
           className="border px-2 py-2 rounded w-full outline-red-500"
         />
-        <input
-          type="text"
-          name="anniversaire"
-          placeholder="Date de naissance (JJ/MM/AAAA)"
-          pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
-          maxLength="10"
-          className="border px-2 py-2 rounded w-full outline-red-500"
-          title="Format requis: JJ/MM/AAAA"
-        />
+        <div className="block">
+          <label for="anniversaire" className="text-sm text-gray-600">
+            Date de naissance
+          </label>
+          <input
+            type="date"
+            id="anniversaire"
+            name="anniversaire"
+            className="border px-2 py-2 rounded w-full outline-red-500"
+            title="Sélectionnez votre date de naissance"
+          />
+        </div>
+
         <input
           type="tel"
           name="phone"
@@ -233,7 +236,7 @@ const WithdrawInformation = () => {
                 className="relative inline-flex items-center text-gray-500 hover:text-gray-700"
                 aria-label="Plus d'informations"
               >
-                <HelpCircle className="w-5 h-5 font-bold" />
+                <HelpCircle className="w-4 h-4 font-bold" />
                 {showInfoBubble1 && (
                   <div className="absolute bottom-full right-0 mb-2 w-[240px] p-3 bg-gray-800 text-white text-xs rounded-lg shadow-lg z-10">
                     <p>
@@ -245,9 +248,7 @@ const WithdrawInformation = () => {
                 )}
               </button>
             </div>
-            <span className="text-sm text-gray-500 italic">
-              En attente
-            </span>
+            <span className="text-sm text-gray-500 italic">En attente</span>
           </div>
 
           {/* Solde disponible */}

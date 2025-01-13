@@ -23,7 +23,7 @@ const WhatsAppModal = ({ isOpen, onClose, onConfirm }) => {
             <img 
               src="/img/pro/whatsappbusiness.jpeg"
               alt="WhatsApp Business"
-              className="w-[69px] h-[69px] object-contain"
+              className="min-w-[49px] sm:w-full sm:max-w-[69px] max-h-[69px] object-contain"
             />
           </div>
           

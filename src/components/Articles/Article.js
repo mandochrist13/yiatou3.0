@@ -54,7 +54,7 @@ const Article = ({ share = null, product }) => {
      className="w-full bg-white rounded-lg shadow-sm relative overflow-hidden flex flex-col"
    >
      {/* Image */}
-     <Link to={`/produit-details/${product.id}`} className="block relative">
+     <Link to={`/produit-details/${product.id}#specific-section`} className="block relative">
        <div className="aspect-w-1 aspect-h-1 w-full">
          <img
            className="w-full h-full object-cover object-center"

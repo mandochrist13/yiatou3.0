@@ -29,6 +29,13 @@ module.exports = {
             transform: "translateY(-5px)",
           },
         },
+        moveToCart: {
+          '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+          '100%': {
+            transform: 'translate(calc(100vw - 50px), -50vh) scale(0.5)',
+            opacity: '0',
+          },
+        },
         shimmer: {
           from: {
             backgroundPosition: "0 0",
@@ -61,6 +68,7 @@ module.exports = {
         fadeIn: "fadeIn 0.3s ease-in-out",
         levitate: "levitate 2s ease-in-out infinite",
         shimmer: "shimmer 7s linear infinite",
+        "move-to-cart": "moveToCart 1s ease-in-out",
       },
     },
   },

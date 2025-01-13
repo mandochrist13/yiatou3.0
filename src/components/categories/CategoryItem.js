@@ -3,6 +3,7 @@ import React from 'react';
 const CategoryItem = ({ item, isSelected, onClick }) => {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); // Empêche les comportements par défaut (comme le défilement avec la touche Espace)
       onClick(item.link, item.category);
     }
   };
@@ -17,14 +18,15 @@ const CategoryItem = ({ item, isSelected, onClick }) => {
       onKeyDown={handleKeyDown}
     >
       <div 
-        className={`w-16 h-16 rounded-full overflow-hidden shadow-sm mb-2 ${
-          isSelected ? 'ring-2 ring-black ring-offset-4 ring-offset-white' : ''
+        className={`w-16 h-16 rounded-full overflow-hidden shadow-sm mb-2 transition-transform ${
+          isSelected ? 'ring-2 ring-black ring-offset-4 ring-offset-white scale-110' : 'hover:scale-105'
         }`}
       >
         <img
           src={item.image}
-          alt={item.title}
+          alt={item.title || "Image de catégorie"}
           className="w-full h-full object-cover"
+          onError={(e) => e.target.src = '/path/to/fallback-image.jpg'} // Fallback si l'image échoue
         />
       </div>
       <span 
@@ -40,4 +42,4 @@ const CategoryItem = ({ item, isSelected, onClick }) => {
   );
 };
 
-export default CategoryItem; 
+export default CategoryItem;

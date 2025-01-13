@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import TopBar from "../../components/topBar/TopBar";
 import PageLayout from "../layout/PageLayout";
 import BottomBar from "../../components/bottomBar/BottomBar";
@@ -103,17 +103,36 @@ const Beaute = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
 
+  const containerRef = useRef();
+
   const handleCategoryClick = (link, category) => {
     setSelectedCategory(category || 'all');
+    setSelectedSubCategory(null); // Réinitialise la sous-catégorie sélectionnée lors du changement de catégorie
   };
 
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products.filter(product => product.category === selectedCategory);
+  const handleSubCategoryClick = (subCategory, index) => {
+    setSelectedSubCategory(subCategory);
+
+    // Récupère l'élément cliqué et assure le défilement
+    const child = containerRef.current?.children[index];
+    if (child) {
+      child.scrollIntoView({
+        behavior: 'smooth', // Défilement fluide
+        inline: 'center',   // Centre horizontalement
+        block: 'nearest',   // Défilement vertical minimal
+      });
+    }
+  };
+
+  const filteredProducts =
+    selectedCategory === 'all'
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
 
   return (
     <PageLayout bottomBar={<BottomBar />} topBar={<TopBar />}>
       <div className="flex flex-col h-full bg-gray-50 translate-y-24 mb-16">
+        {/* Catégories */}
         <div className="flex gap-4 px-4 py-4 overflow-x-auto bg-white scrollbar-hide border-b border-gray-300">
           {categoryItems.map((item) => (
             <CategoryItem
@@ -125,17 +144,22 @@ const Beaute = () => {
           ))}
         </div>
 
-        <div className="flex overflow-x-auto scrollbar-hide bg-white px-4 py-2">
+        {/* Sous-catégories */}
+        <div
+          ref={containerRef}
+          className="flex overflow-x-auto scrollbar-hide bg-white px-4 py-2"
+        >
           {subCategories[selectedCategory]?.map((subCategory, index) => (
             <SubCategoryItem
               key={index}
               subCategory={subCategory}
               isSelected={selectedSubCategory === subCategory}
-              onClick={setSelectedSubCategory}
+              onClick={() => handleSubCategoryClick(subCategory, index)}
             />
           ))}
         </div>
 
+        {/* Produits filtrés */}
         <div className="grid grid-cols-2 gap-2 px-3 mb-16 mt-2">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />

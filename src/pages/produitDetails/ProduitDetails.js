@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { FaUserLock } from "react-icons/fa";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import ModalModel from "../../components/Modals/ModalModel";
 import CoutLivraison from "../../components/Sections/CoutLivraison";
 import DetailsProduct from "../../components/Sections/DetailsProduct";
@@ -113,6 +113,34 @@ const ProduitDetails = () => {
   );
 };
 
+const handleAddToCartAnimation = (e) => {
+  const target = e.target.closest(".product-image");
+  const cart = document.querySelector(".cart-icon");
+
+  if (target && cart) {
+    const clonedImage = target.cloneNode(true);
+    const rect = target.getBoundingClientRect();
+    const cartRect = cart.getBoundingClientRect();
+
+    clonedImage.style.position = "absolute";
+    clonedImage.style.top = `${rect.top}px`;
+    clonedImage.style.left = `${rect.left}px`;
+    clonedImage.style.width = `${rect.width}px`;
+    clonedImage.style.height = `${rect.height}px`;
+
+    document.body.appendChild(clonedImage);
+
+    clonedImage.classList.add("animate-to-cart");
+    clonedImage.style.setProperty("--final-x", `${cartRect.left - rect.left}px`);
+    clonedImage.style.setProperty("--final-y", `${cartRect.top - rect.top}px`);
+
+    clonedImage.addEventListener("animationend", () => {
+      document.body.removeChild(clonedImage);
+    });
+  }
+};
+
+
 const BottomButton = ({ toggleModal, product, onAddToCart }) => {
   const { addToCart } = useCart();
 
@@ -140,7 +168,10 @@ const BottomButton = ({ toggleModal, product, onAddToCart }) => {
           Commander
         </ButtonCta>
         <ButtonCta
-          onClick={handleAddToCart}
+          onClick={(e) => {
+            handleAddToCartAnimation(e);
+            handleAddToCart();
+          }}
           className="flex-1 flex items-center justify-center text-md font-bold"
         >
           Ajoute au panier
@@ -224,7 +255,7 @@ const PersonnalInfo = () => {
 
         <button
           type="submit"
-          className="w-full bg-red-500 text-white py-3 rounded-lg font-semibold transition-colors mt-4"
+          className="w-full bg-main-button text-white py-3 rounded-lg font-semibold transition-colors mt-4"
         >
           Enregistrer
         </button>
@@ -249,13 +280,25 @@ const PersonnalInfo = () => {
  */
 const HeaderProductDetails = ({ product }) => {
   const [currentImage, setCurrentImage] = useState(1);
+  const location = useLocation();
 
+  useEffect(() => {
+    // Vérifie si l'URL contient un fragment (ancre)
+    const hash = location.hash;
+    if (hash) {
+      const element = document.querySelector(hash); // Recherche l'élément correspondant à l'id
+      if (element) {
+        element.scrollIntoView({ block: "start" });
+      }
+    }
+  }, [location]);
   return (
-    <div className="w-full relative">
+    <div id="specific-section" className="w-full relative">
       <SliderModel onSlideChange={(index) => setCurrentImage(index + 1)}>
         {product.image.map((img, i) => {
           return (
             <div
+            
               key={i}
               className="w-full h-[100vw] bg-white flex justify-center items-center overflow-hidden"
             >
