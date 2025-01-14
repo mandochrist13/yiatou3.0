@@ -5,7 +5,7 @@ import { useState } from "react"
  * @param {{texte : string}} param0 
  * @returns 
  */
-export default function Desciption({texte,max = 100}) {
+export default function Desciption({texte,max = 70}) {
     const [more,setMore] = useState(false);
     let textArray = texte.split("");
     textArray.length = max;

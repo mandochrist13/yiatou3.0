@@ -19,7 +19,7 @@ const Account = () => {
           <div className="text-lg font-medium">Mon compte</div>
           <button
             onClick={handleToggleShare}
-            className="rounded-full p-2 transition-colors"
+            className="rounded-full py-2 transition-colors"
             aria-label="Partager"
             tabIndex={0}
           >
@@ -101,7 +101,7 @@ const Account = () => {
                   tabIndex={0}
                 >
                   <span><i className={`fi ${icon} flex`} /></span>
-                  <span className="text-black">{label}</span>
+                  <span className="text-black font-normal ">{label}</span>
                 </Link>
               </li>
             ))}

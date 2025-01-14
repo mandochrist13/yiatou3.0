@@ -5,7 +5,7 @@ const PageLayout = ({ children, topBar = false, bottomBar = false, className = "
     return (
         <Layout className={className}>
             {topBar && <TopBarLayout>{topBar}</TopBarLayout>}
-            <div className="w-full pb-20">
+            <div className="w-full pb-[75px]">
                 {children}
             </div>
             {bottomBar && (

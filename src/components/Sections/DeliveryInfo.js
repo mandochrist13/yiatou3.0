@@ -1,37 +1,45 @@
-import React, { useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
-import { formatCurrency, addDaysToDate, formatDateRange } from '../../utils/utils';
+import React, { useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import {
+  formatCurrency,
+  addDaysToDate,
+  formatDateRange,
+} from "../../utils/utils";
 
 const CustomSelect = ({ value, onChange, options, currency }) => {
   return (
-    <div className="relative inline-flex items-center">
-      <div className="relative">
+    < div className="relative inline-flex items-center">
+      
         <select
           value={value}
           onChange={onChange}
-          className="appearance-none bg-transparent text-md text-blue-600 focus:outline-none py-1 pl-2 pr-2"
+          className="appearance-none bg-transparent text-transparent  text-md focus:outline-none py-1 pl-2 pr-2"
         >
           {options.map((option) => (
-            <option key={option.name} value={option.name}>
-              {option.name === value ? option.name : `${formatCurrency(option.price, currency)} - ${option.name}`}
+            <option className="text-blue-600" key={option.name} value={option.name}>
+              {`${formatCurrency(option.price, currency)} - ${option.name}`}
             </option>
           ))}
         </select>
-      </div>
+        {/* Sélection apparente uniquement avec le nom de la ville */}
+        <div className="absolute text-blue-600 inset-y-0 left-0 pl-2 pointer-events-none flex items-center">
+          {value}
+        </div>
+    
     </div>
   );
 };
 
-const DeliveryInfo = ({ 
-  initialCity, 
-  initialPrice, 
-  currency, 
-  unit, 
-  startDate, 
-  endDate, 
-  daysRange, 
+const DeliveryInfo = ({
+  initialCity,
+  initialPrice,
+  currency,
+  unit,
+  startDate,
+  endDate,
+  daysRange,
   cities,
-  isSample = false
+  isSample = false,
 }) => {
   const [selectedCity, setSelectedCity] = useState(initialCity);
   const [price, setPrice] = useState(initialPrice);
@@ -39,9 +47,9 @@ const DeliveryInfo = ({
 
   const handleCityChange = (e) => {
     const cityName = e.target.value;
-    const selectedCityObj = cities.find(city => city.name === cityName);
+    const selectedCityObj = cities.find((city) => city.name === cityName) || {};
     setSelectedCity(cityName);
-    setPrice(selectedCityObj.price);
+    setPrice(selectedCityObj.price || 0);
     setDeliveryDays(isSample ? 0 : daysRange + 2);
   };
 
@@ -50,7 +58,10 @@ const DeliveryInfo = ({
       return "-2 heures";
     }
     const newEndDate = addDaysToDate(startDate, deliveryDays);
-    return `${formatDateRange(startDate, newEndDate)} (10 - ${deliveryDays} jours)`;
+    return `${formatDateRange(
+      startDate,
+      newEndDate
+    )} (10 - ${deliveryDays} jours)`;
   };
 
   return (
@@ -70,7 +81,10 @@ const DeliveryInfo = ({
         </div>
       </div>
       <p className="mt-2 text-gray-600 text-sm">
-        Prix: <span className="font-base">{formatCurrency(price, currency)}/{unit}</span>
+        Prix:{" "}
+        <span className="font-base">
+          {formatCurrency(price, currency)}/{unit}
+        </span>
       </p>
       <p className="mt-1 text-gray-600 text-sm">
         Délais: <span className="font-base">{getDeliveryTimeText()}</span>

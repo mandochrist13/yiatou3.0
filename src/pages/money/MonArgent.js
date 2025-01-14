@@ -122,6 +122,16 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
     setWithdrawModal(true);
   };
 
+  const [dateValue, setDateValue] = useState("");
+
+  const handleInputChange = (e) => {
+    const value = e.target.value.replace(/\D/g, ""); // Supprime les caractères non numériques
+    const formattedValue = value
+      .replace(/^(\d{2})(\d)/, "$1/$2") // Ajoute le premier "/"
+      .replace(/^(\d{2}\/\d{2})(\d)/, "$1/$2"); // Ajoute le second "/"
+    setDateValue(formattedValue.substring(0, 10)); // Limite à 10 caractères
+  };
+
   return (
     <>
       <p className="text-sm text-gray-700 px-3 text-center -translate-y-7">
@@ -161,11 +171,14 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
             Date de naissance
           </label>
           <input
-            type="date"
+            type="text"
             id="anniversaire"
             name="anniversaire"
             className="border px-2 py-2 rounded w-full outline-red-500"
-            title="Sélectionnez votre date de naissance"
+            placeholder="jj/mm/aaaa"
+            value={dateValue}
+            onChange={handleInputChange}
+            maxLength="10" // Limite à 10 caractères
           />
         </div>
 

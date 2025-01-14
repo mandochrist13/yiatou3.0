@@ -18,7 +18,7 @@ const ButtonWhatsapp = ({ children, phoneNumber, message }) => {
     <button
       onClick={handleWhatsAppRedirect}
       onKeyDown={handleKeyDown}
-      className="flex font-medium gap-3 items-center justify-center w-full py-3 px-4 rounded-full text-white bg-green-600  transition-colors duration-200  "
+      className="flex font-medium gap-2 items-center justify-center w-full py-3 px-4 rounded-full text-white bg-green-600  transition-colors duration-200  "
       aria-label="Ouvrir WhatsApp"
       tabIndex={0}
       type="button"
