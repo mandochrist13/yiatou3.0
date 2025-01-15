@@ -28,7 +28,7 @@ const SelectProductColor = () => {
                 </button>
             </div>
             <OverflowSliderModel>
-                <SelectVariante/>
+                <SelectVariante />
                 <SelectVariante/>
                 <SelectVariante/>
                 <SelectVariante/>
