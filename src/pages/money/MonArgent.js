@@ -236,15 +236,36 @@ const WithdrawInformation = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="bg-gray-100 px-3 py-5 -mx-3">
-        <div className="flex justify-center items-center max-w-md bg-white py-6 rounded-lg shadow-md">
-          {/* Solde bloqué */}
-          <div className="flex flex-col justify-between items-center w-full">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-xl text-gray-400 opacity-60">
+        <div className="flex flex-col justify-center items-center max-w-md bg-white py-6 rounded-lg shadow-md">
+          {/* Solde disponible */}
+          <div className="flex flex-col justify-between items-center w-full px-5">
+            <div className="flex items-center gap-2 border-b-2 border-orange-500 pb-3 w-full justify-center">
+              <span className="font-bold text-5xl text-green-700">
                 6,500 FCFA
               </span>
-              {/* <FaLock className="text-gray-400" /> */}
-              <button
+              <FaCoins
+                className="text-yellow-500 text-2xl animate-bounce"
+                style={{
+                  animation: "bounce 1s infinite",
+                  animationDuration: "2s",
+                }}
+              />
+            </div>
+            {/* <span className="text-sm text-gray-600 italic">
+              Solde disponible
+            </span> */}
+          </div>
+
+          {/* Solde bloqué */}
+          <div className="flex pt-4 justify-center items-center w-full gap-2">
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-xl text-gray-500 opacity-60">
+                6,500 FCFA
+              </span>
+              <span className="text-sm text-gray-500 italic">En attente</span>
+            </div>
+            {/* <FaLock className="text-gray-400" /> */}
+            <button
                 onClick={handleInfoClick1}
                 className="relative inline-flex items-center text-gray-500 hover:text-gray-700"
                 aria-label="Plus d'informations"
@@ -260,27 +281,7 @@ const WithdrawInformation = () => {
                   </div>
                 )}
               </button>
-            </div>
-            <span className="text-sm text-gray-500 italic">En attente</span>
-          </div>
-
-          {/* Solde disponible */}
-          <div className="flex flex-col justify-between items-center w-full">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-xl text-green-700">
-                6,500 FCFA
-              </span>
-              <FaCoins
-                className="text-yellow-500 text-2xl animate-bounce"
-                style={{
-                  animation: "bounce 1s infinite",
-                  animationDuration: "2s",
-                }}
-              />
-            </div>
-            <span className="text-sm text-gray-600 italic">
-              Solde disponible
-            </span>
+            
           </div>
         </div>
       </div>
