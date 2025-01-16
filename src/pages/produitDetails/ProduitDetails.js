@@ -99,7 +99,7 @@ const ProduitDetails = () => {
           onModalOpen={() => setIsCityModalOpen(true)}
           onModalClose={() => setIsCityModalOpen(false)}
         />
-        <Echantillons />
+        <Echantillons sampleId={id}/>
         <DeliveryPromises />
         <CoutLivraison />
         <MoreProduct />
