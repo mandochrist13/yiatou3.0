@@ -6,7 +6,7 @@ const Echantillons = ({ sampleText, samplePrice, sampleCommission, onOrder, samp
   const navigate = useNavigate();
 
   const handleNavigateToSamples = () => {
-    navigate('/echantillons');
+    navigate(`/echantillonDetails/${sampleId}`)
   };
 
   const handleKeyDown = (event) => {
