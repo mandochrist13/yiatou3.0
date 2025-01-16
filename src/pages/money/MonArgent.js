@@ -131,6 +131,10 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
       .replace(/^(\d{2}\/\d{2})(\d)/, "$1/$2"); // Ajoute le second "/"
     setDateValue(formattedValue.substring(0, 10)); // Limite à 10 caractères
   };
+  const handleFocus = (event) => {
+    event.target.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+  
 
   return (
     <>
@@ -159,12 +163,14 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
           name="name"
           placeholder="Noms"
           className="border px-2 py-2 rounded w-full outline-red-500"
+          onFocus={handleFocus}
         />
         <input
           type="text"
           name="last"
           placeholder="Prenoms"
           className="border px-2 py-2 rounded w-full outline-red-500"
+          onFocus={handleFocus}
         />
         <div className="block">
           <label for="anniversaire" className="text-sm text-gray-600">
@@ -179,6 +185,7 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
             value={dateValue}
             onChange={handleInputChange}
             maxLength="10" // Limite à 10 caractères
+            onFocus={handleFocus}
           />
         </div>
 
@@ -187,14 +194,16 @@ const PaiementInformations = ({ setMoneyModal, setWithdrawModal }) => {
           name="phone"
           placeholder="N˚ de téléphone appel"
           className="border px-2 py-2 rounded w-full outline-red-500"
+          onFocus={handleFocus}
         />
         <input
           type="text"
           name="names"
           placeholder="Nom complet relie au compte"
           className="border px-2 py-2 rounded w-full outline-red-500"
+          onFocus={handleFocus}
         />
-        <select className="border px-2 py-2 rounded w-full outline-red-500">
+        <select  onFocus={handleFocus} className="border px-2 py-2 rounded w-full outline-red-500">
           <option>Quelle est ton statut ?</option>
           <option value="Eleve">Elève</option>
           <option value="Eleve">Employé</option>
@@ -234,7 +243,7 @@ const WithdrawInformation = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex border-t-2 border-black/5 mt-[-16px] flex-col gap-4">
       <div className=" ">
         <div className="flex flex-col justify-center items-center max-w-md bg-white py-6 rounded-lg">
           {/* Solde disponible */}
@@ -273,7 +282,7 @@ const WithdrawInformation = () => {
                 className="relative inline-flex items-center text-gray-500 hover:text-gray-700"
                 aria-label="Plus d'informations"
               >
-                <HelpCircle className="w-4 h-4 font-bold" />
+                <i className={`fi fi-rr-info flex`} />
                 {showInfoBubble1 && (
                   <div className="absolute bottom-full right-0 mb-2 w-[240px] p-3 bg-gray-800 text-white text-xs rounded-lg shadow-lg z-10">
                     <p>
