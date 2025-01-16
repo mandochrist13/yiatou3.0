@@ -1,6 +1,7 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import ModalModel from "../../components/Modals/ModalModel";
+import ModalModel from "../../components/Modals/ModalModel";
+import AddLivraison from "../Modals/AddLivraison";
 
 const LivraisonInfo = ({ onOpenLivraison }) => {
   const openModalLivraison = () => {
@@ -11,21 +12,6 @@ const LivraisonInfo = ({ onOpenLivraison }) => {
     } catch (error) {
       console.log("onClose doit être une fonction.");
     }
-  };
-
-  const [showModal, setShowModal] = useState(false);
-
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
-  const handleSaveLivraison = (selectedAddress) => {
-    console.log("Adresse sélectionnée :", selectedAddress);
-    setShowModal(false);
   };
 
   return (
@@ -50,87 +36,38 @@ const LivraisonInfo = ({ onOpenLivraison }) => {
       >
         Changer l'adresse de livraison
       </button>
-      <LivraisonInfo onOpenLivraison={handleOpenModal} />
-      {showModal && (
-        <Modal onClose={handleCloseModal}>
-          <AddLivraison onSave={handleSaveLivraison} />
-        </Modal>
+    </div>
+  );
+};
+
+const App = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <div>
+      <LivraisonInfo onOpenLivraison={() => setIsModalOpen(true)} />
+      {isModalOpen && (
+        <ModalModel
+        title="Où doit-on te livrer?"
+        onClose={() => setIsModalOpen(false)}
+      >
+        <div className="mb-5 flex flex-col items-center gap-5">
+          <AddLivraison
+            onCreateLivraison={() => {
+              console.log("Ajouter une nouvelle adresse");
+              // Ajoutez ici la logique pour créer une nouvelle adresse
+            }}
+            onSave={(data) => {
+              console.log("Adresse sélectionnée ou modifiée:", data);
+              // Ajoutez ici la logique pour sauvegarder l'adresse ou la sélection
+            }}
+          />
+        </div>
+      </ModalModel>
+      
       )}
     </div>
   );
 };
-export default LivraisonInfo;
 
-// const App = () => {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   return (
-//     <div>
-//       <LivraisonInfo onOpenLivraison={() => setIsModalOpen(true)} />
-//       {isModalOpen && (
-//         <ModalModel
-//           title="Où doit-on te livrer?"
-//           onClose={() => setIsModalOpen(false)}
-//         >
-//           <div className=" mb-5 flex flex-col items-center gap-5 ">
-//             <div className=" ">
-//               <div className=" flex justify-between items-center">
-//                 <div className="flex items-center gap-2">
-//                   <input
-//                     type="checkbox"
-//                     id="assurance"
-//                     className="w-3.5 h-3.5 accent-blue-400"
-//                   />
-//                   <h2 className="text-md font-bold">Adresse 1</h2>
-//                 </div>
-//                 <button
-//                   // onClick={onEdit}
-//                   className="text-gray-600 hover:text-blue-600 transition-colors p-2 rounded-full hover:bg-gray-100"
-//                   aria-label="Modifier les informations"
-//                 >
-//                   <i className="fi fi-rr-edit"></i>
-//                 </button>{" "}
-//               </div>
-//               <p className=" ">
-//                 Livraison à Mr. Dave Anguilet Walker, à l'adresse Beauséjour en
-//                 face de chez Mamboundou.
-//               </p>{" "}
-//             </div>
-//             <div className=" ">
-//               <div className=" flex justify-between items-center">
-//                 <div className="flex items-center gap-2">
-//                   <input
-//                     type="checkbox"
-//                     id="assurance"
-//                     className="w-3.5 h-3.5 accent-blue-400"
-//                   />
-//                   <h2 className="text-md font-bold">Adresse 2</h2>
-//                 </div>
-//                 <button
-//                   // onClick={onEdit}
-//                   className="text-gray-600 hover:text-blue-600 transition-colors p-2 rounded-full hover:bg-gray-100"
-//                   aria-label="Modifier les informations"
-//                 >
-//                   <i className="fi fi-rr-edit"></i>
-//                 </button>{" "}
-//               </div>
-//               <p className=" ">
-//                 Livraison à Mr. Dave Anguilet Walker, à l'adresse Beauséjour en
-//                 face de chez Mamboundou.
-//               </p>{" "}
-//             </div>
-//             <button
-//                   // onClick={onEdit}
-//                   className="text-gray-800 border border-gray-800 p-2 rounded-md"
-//                   aria-label="Ajouter une adresse"
-//                 >
-//                   Ajouter une adresse de livraison
-//                 </button>{" "}
-//           </div>
-//         </ModalModel>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default App;
+export default App;
