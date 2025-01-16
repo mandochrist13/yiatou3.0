@@ -48,6 +48,8 @@ const ProduitDetails = () => {
     { name: "Owendo", price: 2500 },
     // Ajoutez d'autres villes selon vos besoins
   ];
+  // Tableau simple avec les noms des villes
+  const cityNames = [{name:"Libreville"}, {name:"Port-Gentil"}];
 
   const handleCartClick = () => {
     navigate("/cart");
@@ -89,6 +91,7 @@ const ProduitDetails = () => {
         <SelectProductColor productType="shoes" />
         <DeliveryInfo
           initialCity="Libreville"
+          initialCity1="Libreville"
           initialPrice={2000}
           currency="FCFA"
           unit="Kg"
@@ -96,10 +99,11 @@ const ProduitDetails = () => {
           endDate={new Date(new Date().setDate(new Date().getDate() + 14))} // Date de fin initiale (14 jours après la date de début)
           daysRange={14}
           cities={cities}
+          cityNames={cityNames}
           onModalOpen={() => setIsCityModalOpen(true)}
           onModalClose={() => setIsCityModalOpen(false)}
         />
-        <Echantillons sampleId={id}/>
+        <Echantillons sampleId={id} />
         <DeliveryPromises />
         <CoutLivraison />
         <MoreProduct />
@@ -131,7 +135,10 @@ const handleAddToCartAnimation = (e) => {
     document.body.appendChild(clonedImage);
 
     clonedImage.classList.add("animate-to-cart");
-    clonedImage.style.setProperty("--final-x", `${cartRect.left - rect.left}px`);
+    clonedImage.style.setProperty(
+      "--final-x",
+      `${cartRect.left - rect.left}px`
+    );
     clonedImage.style.setProperty("--final-y", `${cartRect.top - rect.top}px`);
 
     clonedImage.addEventListener("animationend", () => {
@@ -139,7 +146,6 @@ const handleAddToCartAnimation = (e) => {
     });
   }
 };
-
 
 const BottomButton = ({ toggleModal, product, onAddToCart }) => {
   const { addToCart } = useCart();
@@ -298,7 +304,6 @@ const HeaderProductDetails = ({ product }) => {
         {product.image.map((img, i) => {
           return (
             <div
-            
               key={i}
               className="w-full h-[100vw] bg-white flex justify-center items-center overflow-hidden"
             >
