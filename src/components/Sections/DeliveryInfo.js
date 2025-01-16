@@ -36,7 +36,6 @@ const DeliveryInfo = ({
   currency,
   unit,
   startDate,
-  endDate,
   daysRange,
   cities,
   isSample = false,
@@ -55,7 +54,13 @@ const DeliveryInfo = ({
 
   const getDeliveryTimeText = () => {
     if (isSample) {
-      return "-2 heures";
+      return (
+        <div>
+          Délais: -2 heures
+          <br />
+          Prix: {formatCurrency(price, currency)}/{unit}
+        </div>
+      );
     }
     const newEndDate = addDaysToDate(startDate, deliveryDays);
     return `${formatDateRange(
@@ -80,14 +85,14 @@ const DeliveryInfo = ({
           <FiChevronDown className="h-4 w-4 text-blue-600 -ml-24" />
         </div>
       </div>
-      <p className="mt-2 text-gray-600 text-sm">
+      <p className="mt-2 hidden text-gray-600 text-sm">
         Prix:{" "}
         <span className="font-base">
           {formatCurrency(price, currency)}/{unit}
         </span>
       </p>
       <p className="mt-1 text-gray-600 text-sm">
-        Délais: <span className="font-base">{getDeliveryTimeText()}</span>
+       <span className="font-base">{getDeliveryTimeText()}</span>
       </p>
       <p className="mt-2 text-xs text-black font-medium">
         (Paiement du transport à la livraison)
